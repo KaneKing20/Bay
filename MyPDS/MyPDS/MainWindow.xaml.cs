@@ -10,6 +10,7 @@ using Microsoft.Win32;
 using MyPDS.Models;
 using Newtonsoft.Json;
 using PDS.WITSMLstudio.Desktop.Core.Connections;
+using PDS.WITSMLstudio.Desktop.Core.Runtime;
 using PDS.WITSMLstudio.Desktop.Core.ViewModels;
 using PDS.WITSMLstudio.Framework;
 using System;
@@ -17,6 +18,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -42,7 +44,10 @@ namespace MyPDS
         private const string Password = " ";
         private const string EtpSubProtocol = "energistics-tp";
         public EtpClient Client { set; get; }
-       // public EtpSettings Model { get; }
+        public CancellationTokenSource EtpClientTokenSource { get; private set; }
+        public Proxies.EtpChannelStreamingProxy EtpClientProxy { get; private set; }
+        public IRuntimeService Runtime { get; }
+        // public EtpSettings Model { get; }
 
         public MainWindow()
         {
@@ -162,7 +167,31 @@ namespace MyPDS
                 {
                     var json = File.ReadAllText(dialog.FileName);
                     var model = JsonConvert.DeserializeObject<Models.Simulation>(json);
+                    EtpClientProxy = new Proxies.EtpChannelStreamingProxy(Runtime, model.EtpVersion, Log);
+                    EtpClientTokenSource = new CancellationTokenSource();
+                    var token = EtpClientTokenSource.Token;
 
+                    Task.Run(async () =>
+                    {
+                        using (EtpClientTokenSource)
+                        {
+                            try
+                            {
+                                Log("ETP Client simulation starting. URL: {0}", model.EtpConnection.Uri);
+                                await EtpClientProxy.Start(model, token);
+                                Log("ETP Client simulation stopped.");
+                            }
+                            catch (Exception ex)
+                            {
+                                Log("An error occurred: " + ex);
+                            }
+                            finally
+                            {
+                                EtpClientTokenSource = null;
+                            }
+                        }
+                    },
+           token);
                     //var viewModel = new SimulationViewModel(Runtime)
                     //{
                     //    Model = model,
@@ -177,6 +206,27 @@ namespace MyPDS
                     System.Windows.MessageBox.Show("Error opening file.", ex.ToString());
                 }
             }
+        }
+
+        private void Log(string message, params object[] values)
+        {
+            Log(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffff - ") + string.Format(message, values));
+        }
+
+        private void Log(string message)
+        {
+            if (string.IsNullOrWhiteSpace(message))
+                return;
+
+            string showmsg = string.Concat(
+                message.StartsWith("{") ? string.Empty : "// ",
+                message,
+                Environment.NewLine);
+
+            this.Details.Dispatcher.Invoke(new Action(() =>
+            {
+                this.Details.AppendText(showmsg);
+            }));
         }
     }
 }

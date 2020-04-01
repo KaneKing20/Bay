@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MyPDS"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="5">
+    <Grid Margin="5" RenderTransformOrigin="0.567,0.69">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" MinWidth="465" />
             <ColumnDefinition Width="3*" />
@@ -24,7 +24,7 @@
         <Grid Grid.Column="1" Margin="5,0,0,0">
             <TabControl>
                 <TabItem Header="Results">
-                    <TextBox x:Name="Details" />
+                    <TextBox VerticalScrollBarVisibility="Visible" x:Name="Details" />
                 </TabItem>
                 <TabItem Header="Data Object">
                     <ContentControl x:Name="DataObject" />
