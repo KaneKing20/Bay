@@ -1,34 +1,17 @@
 ﻿using Avro.Specific;
 using Energistics;
 using Energistics.Common;
-using Energistics.Datatypes;
-using Energistics.Protocol.ChannelStreaming;
 using Energistics.Protocol.Core;
 using Energistics.Protocol.Discovery;
-using Energistics.Protocol.Store;
 using Microsoft.Win32;
-using MyPDS.Models;
 using Newtonsoft.Json;
-using PDS.WITSMLstudio.Desktop.Core.Connections;
 using PDS.WITSMLstudio.Desktop.Core.Runtime;
-using PDS.WITSMLstudio.Desktop.Core.ViewModels;
 using PDS.WITSMLstudio.Framework;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MyPDS
 {
@@ -101,7 +84,7 @@ namespace MyPDS
             if (logDetails)
                 LogDetailMessage(message);
 
-            this.Details.Dispatcher.Invoke(new Action(() => { this.Details.AppendText(string.Concat(
+            Dispatcher.Invoke(new Action(() => { this.Details.AppendText(string.Concat(
                 message.StartsWith("{") ? string.Empty : "// ",
                 message,
                 Environment.NewLine)); }));

@@ -174,6 +174,7 @@ namespace MyPDS.Proxies
                 .Select(ToChannelDataItem)
                 .ToList();
 
+            
             Client.Handler<IChannelStreamingProducer>()
                 .ChannelData(null, dataItems);
         }
@@ -276,6 +277,13 @@ namespace MyPDS.Proxies
             return (long)value;
         }
 
+
+        /// <summary>
+        /// 根据数据类型生成随机值
+        /// </summary>
+        /// <param name="channel"></param>
+        /// <param name="indexDateTimeOffset"></param>
+        /// <returns></returns>
         private object ToChannelDataValue(ChannelMetadataRecord channel, DateTimeOffset indexDateTimeOffset)
         {
             object dataValue = null;
@@ -303,7 +311,8 @@ namespace MyPDS.Proxies
                 case LogDataType.@double:
                 case LogDataType.@float:
                     {
-                        dataValue = _random.NextDouble().ToString(CultureInfo.InvariantCulture);
+                        double tmpvalue = _random.NextDouble ()* 200;
+                        dataValue =tmpvalue.ToString(CultureInfo.InvariantCulture);
                         break;
                     }
                 case LogDataType.@int:
