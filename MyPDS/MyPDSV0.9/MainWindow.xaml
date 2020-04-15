@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyPDSV0._9"
         mc:Ignorable="d"
-        Title="MyPDS" Height="350" Width="800">
+        Title="MyPDS" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"></ColumnDefinition>
@@ -21,23 +22,33 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
                 <ColumnDefinition ></ColumnDefinition>
                 <ColumnDefinition ></ColumnDefinition>
                 <ColumnDefinition ></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" >ServerUrl</Label>
             <Label Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" >AppName</Label>
-            <Label Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" >Version</Label>
-            <TextBox x:Name="ServerUri_TextBox" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" >ws://39.105.96.31/witsml.web/api/etp</TextBox>
+            <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" >Version</Label>
+            <TextBox x:Name="ServerUri_TextBox" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" >ws://39.105.96.31/witsml.web/api/etp</TextBox>
             <TextBox x:Name="AppName_TextBox" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="14" >MyPDS</TextBox>
-             <TextBox x:Name="Version_TextBox" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="14"  >0.9.0.0</TextBox>
-                <Button x:Name="Connect2Server_Button" Click="Connect2Server_Button_Click" Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="20,0,20,0" >CONNECT</Button>
-            <Button Grid.Row="2" Grid.Column="2"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="20,0,20,0">Get</Button>
-        </Grid>
+             <TextBox x:Name="Version_TextBox" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="14"  >0.9.0.0</TextBox>
+                <ListBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" x:Name="Proto_ListBox">
+                    <CheckBox Margin="3">IDiscoveryCustomer</CheckBox>
+                    <CheckBox Margin="3">Option1</CheckBox>
+                    <CheckBox Margin="3">Option1</CheckBox>
+                    <CheckBox Margin="3">Option1</CheckBox>
+                    <CheckBox Margin="3">Option1</CheckBox>
+                    <CheckBox Margin="3">Option1</CheckBox>
+                    <CheckBox Margin="3">Option1</CheckBox>
+                </ListBox> 
+            <Button x:Name="Connect2Server_Button" Click="Connect2Server_Button_Click" Grid.Row="2" Grid.Column="2"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="20,0,20,0" >CONNECT</Button>
+           </Grid>
         </GroupBox>
-        <GroupBox Grid.Row="1" Header="Generating Random Data and Uploading"  VerticalAlignment="Bottom" Margin="10">
+        <GroupBox Grid.Row="1" Header="Generating Random Data and Uploading"  Margin="10">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
@@ -58,13 +69,25 @@
                 <TextBox x:Name="MinValue_TextBox" Margin="3" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="14"  >0</TextBox>
                 <Button Margin="3" Grid.Row="1" Grid.Column="2"  Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="14" >Run</Button>
             </Grid>
-            
         </GroupBox>
-        <GroupBox Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Header="ETP Message" Margin="5">
-        <TextBox x:Name="ETPM_TextBox" TextWrapping="Wrap" IsReadOnly="True" MinLines="5" VerticalScrollBarVisibility="Visible">
-
+        <GroupBox Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" Header="ETP Message" Margin="5">
+            <TextBox x:Name="ETPM_TextBox" TextWrapping="Wrap" IsReadOnly="True" MinLines="5" VerticalScrollBarVisibility="Visible">
             </TextBox>
         </GroupBox>
-        
+        <GroupBox Grid.Row="2" Grid.Column="0" Margin="5" Header="GetObjectFromServer">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="14" >SearchUrl</Label>
+                <TextBox x:Name="SearchUri_TextBox" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="14" >eml://</TextBox>
+                <Button x:Name="GetUri_Button" Grid.Row="0" Grid.Column="2"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="20,0,20,0" Click="GetUri_Button_Click">GetUri</Button>
+            </Grid>
+        </GroupBox>
     </Grid>
 </Window>
