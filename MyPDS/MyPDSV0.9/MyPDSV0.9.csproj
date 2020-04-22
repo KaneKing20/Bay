@@ -35,11 +35,36 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Avro, Version=0.9.0.0, Culture=neutral, PublicKeyToken=b1248d7eeb9d0814" />
+    <Reference Include="Caliburn.Micro, Version=2.0.2.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f" />
+    <Reference Include="Energistics.DataAccess">
+      <HintPath>..\Libs\Energistics.DataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="ETP.DevKit">
       <HintPath>..\Libs\ETP.DevKit.dll</HintPath>
     </Reference>
+    <Reference Include="ETP.Messages, Version=1.5.0.0, Culture=neutral, PublicKeyToken=c2b7028481fb2795, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\ETP.Messages.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PDS.WITSMLstudio.Core, Version=2018.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\PDS.WITSMLstudio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PDS.WITSMLstudio.Desktop.Core">
+      <HintPath>..\Libs\PDS.WITSMLstudio.Desktop.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PDS.WITSMLstudio.Framework, Version=2018.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\PDS.WITSMLstudio.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -72,6 +97,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Simulation.cs" />
+    <Compile Include="Porxies\EtpChannelStreamingProxy.cs" />
+    <Compile Include="Porxies\EtpProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -1,7 +1,10 @@
 ﻿using Energistics;
 using Energistics.Protocol.Discovery;
+using Microsoft.Win32;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,6 +74,37 @@ namespace MyPDSV0._9
         {
             var DisHandler = Client.Handler<IDiscoveryCustomer>();
             DisHandler.GetResources(SearchUri_TextBox.Text);
+        }
+
+        private void Browser_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new OpenFileDialog()
+            {
+                Title = "Open Simulation Configuration Setting file...",
+                Filter="Json|*.json;*.js|All Files|*.*"
+            };
+            if (dialog.ShowDialog(Application.Current.MainWindow).GetValueOrDefault())
+            {
+                try
+                {
+                    ///<summary>
+                    ///读取Jason文件，序列化为model类对象。
+                    /// </summary>
+                    var json = File.ReadAllText(dialog.FileName);
+                    Dispatcher.Invoke(new Action(()=> {FileIn_TextBox.Text=dialog.FileName; ETPM_TextBox.AppendText(json); }));
+                    var model = JsonConvert.DeserializeObject<Models.Simulation>(json);
+
+                    ///<summary>
+                    ///
+                    /// </summary>
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+
         }
     }
 }
