@@ -31,6 +31,6 @@ namespace MyPDSV0._9.Porxies
 
         public TaskRunner TaskRunner { get; protected set; }
 
-        public abstract Task StartAsync(Models.Simulation model, CancellationToken token, int interval = 5000);
+        public abstract Task Start(Models.Simulation model, CancellationToken token, int interval = 5000);
     }
 }

@@ -67,7 +67,8 @@
                 <Button Margin="3" Grid.Row="0" Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"  x:Name="Browser_Button" Click="Browser_Button_Click">Browser</Button>
                 <TextBox x:Name="MaxValue_TextBox" Margin="3" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="14" >100</TextBox>
                 <TextBox x:Name="MinValue_TextBox" Margin="3" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="14"  >0</TextBox>
-                <Button Margin="3" Grid.Row="1" Grid.Column="2"  Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="14" >Run</Button>
+                <Button x:Name="Streaming" Margin="3" Grid.Row="1" Grid.Column="2"   HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="14" Click="Streaming_Click" IsEnabled="False">Run</Button>
+                <Button x:Name="StreamingStop" Margin="3" Grid.Row="2" Grid.Column="2"   HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="14" Click="StreamingStop_Click">Stop</Button>
             </Grid>
         </GroupBox>
         <GroupBox Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" Header="ETP Message" Margin="5">

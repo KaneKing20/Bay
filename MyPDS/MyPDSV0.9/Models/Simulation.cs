@@ -16,8 +16,13 @@ namespace MyPDSV0._9.Models
     {
         public Simulation()
         {
-           // EtpConnection = new Connection();
-           // WitsmlConnection = new Connection();
+            //Channels = new BindableCollection<ChannelMetadataRecord>();
+            WitsmlConnection = new Connection();
+            EtpConnection = new Connection();
+            LogIndexType = LogIndexType.measureddepth;
+            IsSimpleStreamer = true;
+            PortNumber = 9000;
+            Interval = 5000;
         }
         [DataMember]
         public string Name { set; get; }

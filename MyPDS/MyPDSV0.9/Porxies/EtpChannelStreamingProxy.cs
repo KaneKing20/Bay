@@ -34,7 +34,9 @@ namespace MyPDSV0._9.Porxies
        /// <param name="log"></param>
         public EtpChannelStreamingProxy(string dataSchemaVersion,Action<string> log) : base(dataSchemaVersion, log)
         {
-            _random = new Random(246);            
+            _random = new Random(246);
+            Channels = new List<ChannelMetadataRecord>();
+            ChannelStreamingInfo = new List<ChannelStreamingInfo>();
         }
 
         /// <summary>
@@ -44,7 +46,7 @@ namespace MyPDSV0._9.Porxies
         /// <param name="token">是否取消作业的凭证</param>
         /// <param name="interval">模拟数据生成时间间隔</param>
         /// <returns></returns>
-        public override async Task StartAsync(Simulation model, CancellationToken token, int interval = 5000)
+        public override async Task Start(Simulation model, CancellationToken token, int interval = 5000)
         {
             Model = model;//基类中定义 public Models.Simulation Model { get; protected set; }
             using (Client = Model.EtpConnection.CreateEtpClient(Model.Name, Model.Version))
@@ -109,6 +111,11 @@ namespace MyPDSV0._9.Porxies
        /// <param name="e"></param>
         private void OnStart(object sender, ProtocolEventArgs<Start> e)
         {
+            ///<summary>
+            ///该语句是PDS原代码中没有的，所以导致了PDS中的数据生成速度是1s。
+            ///补充该句才能以文件中的interval来生成数据。
+            /// </summary>
+            e.Message.MaxMessageRate = Model.Interval;
             //构造TaskRunner
             TaskRunner = new PDS.WITSMLstudio.Framework.TaskRunner(e.Message.MaxMessageRate) {
              OnError = LogStreamingError,
@@ -244,7 +251,7 @@ namespace MyPDSV0._9.Porxies
                 case LogDataType.@double:
                 case LogDataType.@float:
                     {
-                        double tmpvalue = _random.NextDouble() * 200;
+                        double tmpvalue = _random.NextDouble() * 100;
                         dataValue = tmpvalue.ToString(CultureInfo.InvariantCulture);
                         break;
                     }
