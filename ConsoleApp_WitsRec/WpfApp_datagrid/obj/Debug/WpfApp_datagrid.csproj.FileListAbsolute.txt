@@ -1,0 +1,15 @@
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\WpfApp_datagrid\bin\Debug\WpfApp_datagrid.exe.config
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\WpfApp_datagrid\bin\Debug\WpfApp_datagrid.exe
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\WpfApp_datagrid\bin\Debug\WpfApp_datagrid.pdb
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\WpfApp_datagrid\obj\Debug\WpfApp_datagrid.csprojAssemblyReference.cache
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\WpfApp_datagrid\obj\Debug\MainWindow.g.cs
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\WpfApp_datagrid\obj\Debug\App.g.cs
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\WpfApp_datagrid\obj\Debug\WpfApp_datagrid_MarkupCompile.cache
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\WpfApp_datagrid\obj\Debug\WpfApp_datagrid_MarkupCompile.lref
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\WpfApp_datagrid\obj\Debug\MainWindow.baml
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\WpfApp_datagrid\obj\Debug\WpfApp_datagrid.g.resources
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\WpfApp_datagrid\obj\Debug\WpfApp_datagrid.Properties.Resources.resources
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\WpfApp_datagrid\obj\Debug\WpfApp_datagrid.csproj.GenerateResource.cache
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\WpfApp_datagrid\obj\Debug\WpfApp_datagrid.csproj.CoreCompileInputs.cache
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\WpfApp_datagrid\obj\Debug\WpfApp_datagrid.exe
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\WpfApp_datagrid\obj\Debug\WpfApp_datagrid.pdb

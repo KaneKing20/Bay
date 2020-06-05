@@ -1,0 +1,15 @@
+D:\02-Code\GitHub\Bay\WpfApp_WitsServer\WpfApp_WitsServer\bin\Debug\WpfApp_WitsServer.exe.config
+D:\02-Code\GitHub\Bay\WpfApp_WitsServer\WpfApp_WitsServer\bin\Debug\WpfApp_WitsServer.exe
+D:\02-Code\GitHub\Bay\WpfApp_WitsServer\WpfApp_WitsServer\bin\Debug\WpfApp_WitsServer.pdb
+D:\02-Code\GitHub\Bay\WpfApp_WitsServer\WpfApp_WitsServer\obj\Debug\WpfApp_WitsServer.csprojAssemblyReference.cache
+D:\02-Code\GitHub\Bay\WpfApp_WitsServer\WpfApp_WitsServer\obj\Debug\MainWindow.g.cs
+D:\02-Code\GitHub\Bay\WpfApp_WitsServer\WpfApp_WitsServer\obj\Debug\App.g.cs
+D:\02-Code\GitHub\Bay\WpfApp_WitsServer\WpfApp_WitsServer\obj\Debug\WpfApp_WitsServer_MarkupCompile.cache
+D:\02-Code\GitHub\Bay\WpfApp_WitsServer\WpfApp_WitsServer\obj\Debug\WpfApp_WitsServer_MarkupCompile.lref
+D:\02-Code\GitHub\Bay\WpfApp_WitsServer\WpfApp_WitsServer\obj\Debug\MainWindow.baml
+D:\02-Code\GitHub\Bay\WpfApp_WitsServer\WpfApp_WitsServer\obj\Debug\WpfApp_WitsServer.g.resources
+D:\02-Code\GitHub\Bay\WpfApp_WitsServer\WpfApp_WitsServer\obj\Debug\WpfApp_WitsServer.Properties.Resources.resources
+D:\02-Code\GitHub\Bay\WpfApp_WitsServer\WpfApp_WitsServer\obj\Debug\WpfApp_WitsServer.csproj.GenerateResource.cache
+D:\02-Code\GitHub\Bay\WpfApp_WitsServer\WpfApp_WitsServer\obj\Debug\WpfApp_WitsServer.csproj.CoreCompileInputs.cache
+D:\02-Code\GitHub\Bay\WpfApp_WitsServer\WpfApp_WitsServer\obj\Debug\WpfApp_WitsServer.exe
+D:\02-Code\GitHub\Bay\WpfApp_WitsServer\WpfApp_WitsServer\obj\Debug\WpfApp_WitsServer.pdb

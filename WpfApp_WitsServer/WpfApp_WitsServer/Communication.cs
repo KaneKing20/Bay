@@ -20,75 +20,78 @@ namespace WpfApp_WitsServer
         public string LogString { get { return _logString; } set { _logString = value; } }
 
         private IPEndPoint _ipe;
-        private Socket _clientSocket;
+        private Socket _socket;
+
+        public IPEndPoint ClientEndPoint { set; get; }
+        public Socket ClientSocket { set; get; }
 
         public Communication(string ip, int port)
         {
             IP = IPAddress.Parse(ip);
             Port = port;
             _ipe = new IPEndPoint(IP, Port);
-            _clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            _socket.Bind(_ipe);
+            _socket.Listen(15);
+        }
+
+        public void Listen(int backlog =15)
+        {
             
-            
+           // _clientSocket.Listen(backlog);
+            //return _clientSocket.Accept();
         }
 
-        public Socket BindListenAccept(int backlog =15)
+        public void Accept()
         {
-            _clientSocket.Bind(_ipe);
-            _clientSocket.Listen(backlog);
-            return _clientSocket.Accept();
+            ClientSocket =  _socket.Accept();
+            ClientEndPoint = (IPEndPoint)ClientSocket.RemoteEndPoint;
         }
 
-        public void ConnectToServer()
+        //public void ConnectToServer()
+        //{
+        //    try
+        //    {
+        //        _clientSocket.Connect(_ipe);
+        //        Console.WriteLine("Connected to {0} @ Port:{1}.", IP.ToString(), Port.ToString());
+        //    }
+        //    catch (SocketException e)
+        //    {
+        //        Console.WriteLine("Failed to Connect Server -{0}", e.ToString());
+        //        return;
+        //    }
+        //}
+
+        public void SndData(WitsConfig witsConfig)
         {
-            try
-            {
-                _clientSocket.Connect(_ipe);
-                Console.WriteLine("Connected to {0} @ Port:{1}.", IP.ToString(), Port.ToString());
-            }
-            catch (SocketException e)
-            {
-                Console.WriteLine("Failed to Connect Server -{0}", e.ToString());
-                return;
-            }
+            DataSimu dataSimu = new DataSimu();
+            string str = dataSimu.Simu(witsConfig);
+            byte[] sndByte = System.Text.Encoding.Default.GetBytes(str);
+            ClientSocket.Send(sndByte);
         }
 
-        public void SndData(string str)
-        {           
-            byte[] sndByte = System.Text.Encoding.Default.GetBytes(str); 
-            try
-            {
-                _clientSocket.Send(sndByte);
-            }
-            catch (Exception e)
-            {
+        //public string RecData()
+        //{
+        //    byte[] recByte = new byte[4096];
+        //    int bytes = 0;
+        //    try
+        //    {
+        //        bytes = _clientSocket.Receive(recByte, recByte.Length, 0);
+        //    }
+        //    catch (Exception e)
+        //    {
 
-                Console.WriteLine(e.ToString());
-            }
-        }
+        //        Console.WriteLine(e.ToString());
+        //    }
 
-        public string RecData()
-        {
-            byte[] recByte = new byte[4096];
-            int bytes = 0;
-            try
-            {
-                bytes = _clientSocket.Receive(recByte, recByte.Length, 0);
-            }
-            catch (Exception e)
-            {
+        //    LogString = System.Text.Encoding.Default.GetString(recByte, 0, bytes);
+        //    return LogString;
+        //}
 
-                Console.WriteLine(e.ToString());
-            }
-
-            LogString = System.Text.Encoding.Default.GetString(recByte, 0, bytes);
-            return LogString;
-        }
-
-        public void Close()
-        {
-            _clientSocket.Close();
-            Console.WriteLine("Close.");
-        }
+        //public void Close()
+        //{
+        //    _clientSocket.Close();
+        //    Console.WriteLine("Close.");
+        //}
     }
 }

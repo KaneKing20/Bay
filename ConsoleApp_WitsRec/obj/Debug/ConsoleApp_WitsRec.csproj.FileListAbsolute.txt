@@ -12,3 +12,10 @@ E:\xt18\6.Repos\GitHub\previous\Wits2MysqlDemo\ConsoleApp_WitsRec\obj\Debug\Cons
 E:\xt18\6.Repos\GitHub\previous\Wits2MysqlDemo\ConsoleApp_WitsRec\obj\Debug\ConsoleApp_WitsRec.csproj.CoreCompileInputs.cache
 E:\xt18\6.Repos\GitHub\previous\Wits2MysqlDemo\ConsoleApp_WitsRec\obj\Debug\ConsoleApp_WitsRec.exe
 E:\xt18\6.Repos\GitHub\previous\Wits2MysqlDemo\ConsoleApp_WitsRec\obj\Debug\ConsoleApp_WitsRec.pdb
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\bin\Debug\ConsoleApp_WitsRec.exe.config
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\bin\Debug\ConsoleApp_WitsRec.exe
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\bin\Debug\ConsoleApp_WitsRec.pdb
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\obj\Debug\ConsoleApp_WitsRec.csprojAssemblyReference.cache
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\obj\Debug\ConsoleApp_WitsRec.csproj.CoreCompileInputs.cache
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\obj\Debug\ConsoleApp_WitsRec.exe
+D:\02-Code\GitHub\Bay\ConsoleApp_WitsRec\obj\Debug\ConsoleApp_WitsRec.pdb

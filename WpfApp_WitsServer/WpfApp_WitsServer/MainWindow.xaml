@@ -25,12 +25,8 @@
                     <Button x:Name="SendBtn" HorizontalAlignment="Center" Margin="10" Click="SendBtn_Click">Send</Button>
                 </WrapPanel>
                 
-                <DataGrid Grid.Row="1">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="WITSID"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Description"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Value"></DataGridTextColumn>
-                    </DataGrid.Columns>
+                <DataGrid Grid.Row="1" x:Name="Wits_DataGrid">
+                   
                 </DataGrid>
             </Grid>
            
