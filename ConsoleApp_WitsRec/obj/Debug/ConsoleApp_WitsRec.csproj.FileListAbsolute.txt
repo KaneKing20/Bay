@@ -1,0 +1,14 @@
+E:\xt18\6.Repos\GitHub\previous\Wits2MysqlDemo\Wits2MysqlDemo\ConsoleApp_WitsRec\bin\Debug\ConsoleApp_WitsRec.exe.config
+E:\xt18\6.Repos\GitHub\previous\Wits2MysqlDemo\Wits2MysqlDemo\ConsoleApp_WitsRec\bin\Debug\ConsoleApp_WitsRec.exe
+E:\xt18\6.Repos\GitHub\previous\Wits2MysqlDemo\Wits2MysqlDemo\ConsoleApp_WitsRec\bin\Debug\ConsoleApp_WitsRec.pdb
+E:\xt18\6.Repos\GitHub\previous\Wits2MysqlDemo\Wits2MysqlDemo\ConsoleApp_WitsRec\obj\Debug\ConsoleApp_WitsRec.csprojAssemblyReference.cache
+E:\xt18\6.Repos\GitHub\previous\Wits2MysqlDemo\Wits2MysqlDemo\ConsoleApp_WitsRec\obj\Debug\ConsoleApp_WitsRec.csproj.CoreCompileInputs.cache
+E:\xt18\6.Repos\GitHub\previous\Wits2MysqlDemo\Wits2MysqlDemo\ConsoleApp_WitsRec\obj\Debug\ConsoleApp_WitsRec.exe
+E:\xt18\6.Repos\GitHub\previous\Wits2MysqlDemo\Wits2MysqlDemo\ConsoleApp_WitsRec\obj\Debug\ConsoleApp_WitsRec.pdb
+E:\xt18\6.Repos\GitHub\previous\Wits2MysqlDemo\ConsoleApp_WitsRec\bin\Debug\ConsoleApp_WitsRec.exe.config
+E:\xt18\6.Repos\GitHub\previous\Wits2MysqlDemo\ConsoleApp_WitsRec\bin\Debug\ConsoleApp_WitsRec.exe
+E:\xt18\6.Repos\GitHub\previous\Wits2MysqlDemo\ConsoleApp_WitsRec\bin\Debug\ConsoleApp_WitsRec.pdb
+E:\xt18\6.Repos\GitHub\previous\Wits2MysqlDemo\ConsoleApp_WitsRec\obj\Debug\ConsoleApp_WitsRec.csprojAssemblyReference.cache
+E:\xt18\6.Repos\GitHub\previous\Wits2MysqlDemo\ConsoleApp_WitsRec\obj\Debug\ConsoleApp_WitsRec.csproj.CoreCompileInputs.cache
+E:\xt18\6.Repos\GitHub\previous\Wits2MysqlDemo\ConsoleApp_WitsRec\obj\Debug\ConsoleApp_WitsRec.exe
+E:\xt18\6.Repos\GitHub\previous\Wits2MysqlDemo\ConsoleApp_WitsRec\obj\Debug\ConsoleApp_WitsRec.pdb
