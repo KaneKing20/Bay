@@ -5,16 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp_WitsServer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        xmlns:r="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary">
+    
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <GroupBox Header="Config">
+        <DockPanel Grid.Column="0" Grid.ColumnSpan="2">
+            <ToolBar DockPanel.Dock="Top" Background="White">
+                <Button HorizontalAlignment="Center" Margin="5">
+                    <Button.Content>
+                        <StackPanel>
+                            <Image Stretch="Fill" Source="E:\xt18\6.Repos\GitHub\Bay\WpfApp_WitsServer\WpfApp_WitsServer\Images\listen.PNG" Height="38" Width="47"></Image>
+                            <TextBlock HorizontalAlignment="Center" FontFamily="TimeNewMan" FontStyle="Oblique" FontWeight="Bold" Foreground="BlueViolet">Listen</TextBlock>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button HorizontalAlignment="Center" Margin="5">
+                    <Button.Content>
+                        <StackPanel>
+                            <Image Stretch="Fill" Source="E:\xt18\6.Repos\GitHub\Bay\WpfApp_WitsServer\WpfApp_WitsServer\Images\send.PNG" Height="38" Width="47"></Image>
+                            <TextBlock HorizontalAlignment="Center" FontFamily="TimeNewMan" FontStyle="Oblique" FontWeight="Bold" Foreground="BlueViolet">Send</TextBlock>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button HorizontalAlignment="Center" Margin="5">
+                    <Button.Content>
+                        <StackPanel>
+                            <Image Stretch="Fill" Source="E:\xt18\6.Repos\GitHub\Bay\WpfApp_WitsServer\WpfApp_WitsServer\Images\exit.PNG" Height="38" Width="47"></Image>
+                            <TextBlock HorizontalAlignment="Center" FontFamily="TimeNewMan" FontStyle="Oblique" FontWeight="Bold" Foreground="BlueViolet">Exit</TextBlock>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+               
+            </ToolBar>
+        </DockPanel>
+        <GroupBox Header="Config" Grid.Row="1">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"></RowDefinition>
@@ -31,7 +63,7 @@
             </Grid>
            
         </GroupBox>
-        <GroupBox Header="Result" Grid.Column="1">
+        <GroupBox Header="Result" Grid.Column="1" Grid.Row="1">
             <TextBox x:Name="ResBox"></TextBox>
         </GroupBox>
     </Grid>
