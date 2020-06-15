@@ -25,6 +25,8 @@ namespace WpfApp_WitsServer
         public IPEndPoint ClientEndPoint { set; get; }
         public Socket ClientSocket { set; get; }
 
+        private DataSimu dataSimu ;
+        //private int index = 0;
         public Communication(string ip, int port)
         {
             IP = IPAddress.Parse(ip);
@@ -33,6 +35,7 @@ namespace WpfApp_WitsServer
             _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             _socket.Bind(_ipe);
             _socket.Listen(15);
+            dataSimu = new DataSimu();
         }
 
         public void Listen(int backlog =15)
@@ -64,10 +67,12 @@ namespace WpfApp_WitsServer
 
         public void SndData(WitsConfig witsConfig)
         {
-            DataSimu dataSimu = new DataSimu();
-            string str = dataSimu.Simu(witsConfig);
-            byte[] sndByte = System.Text.Encoding.Default.GetBytes(str);
-            ClientSocket.Send(sndByte);
+           
+                string str = dataSimu.Simu(witsConfig);//每次取las文件中下一行的数据
+                byte[] sndByte = System.Text.Encoding.Default.GetBytes(str);
+                ClientSocket.Send(sndByte);
+
+            
         }
 
         //public string RecData()

@@ -21,6 +21,13 @@ namespace WpfApp_WitsServer
             WitsChart7.Add(new WitsChart()
             {
                 RecordID = "07",
+                ItemID = "12",
+                Desc = "Depth."
+            });
+
+            WitsChart7.Add(new WitsChart()
+            {
+                RecordID = "07",
                 ItemID = "13",
                 Desc = "Inc."
             });
@@ -32,12 +39,12 @@ namespace WpfApp_WitsServer
                 Desc = "Azi."
             });
 
-            WitsChart7.Add(new WitsChart()
-            {
-                RecordID = "07",
-                ItemID = "22",
-                Desc = "Flag."
-            });
+            //WitsChart7.Add(new WitsChart()
+            //{
+            //    RecordID = "07",
+            //    ItemID = "22",
+            //    Desc = "Flag."
+            //});
 
             WitsChart7.Add(new WitsChart()
             {

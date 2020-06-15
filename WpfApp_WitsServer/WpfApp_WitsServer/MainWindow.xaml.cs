@@ -17,13 +17,13 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Timers;
 using Timer = System.Timers.Timer;
-
+using MahApps.Metro.Controls;
 namespace WpfApp_WitsServer
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         private Communication comm;
         private Timer timer;
@@ -42,8 +42,7 @@ namespace WpfApp_WitsServer
             timer = new Timer(2000);
             timer.Elapsed += Timer_Elapsed;
             //string str = "&&\r\n08011000.88\r\n0802899.78\r\n080323.59\r\n!!\r\n";
-            timer.Start();
-           
+            timer.Start();          
         }
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
